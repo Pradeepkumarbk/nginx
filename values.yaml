@@ -1,0 +1,16 @@
+nginx:
+  replicaCount: 1
+  image:
+    repository: k8s.gcr.io/nginx-ingress-controller
+    tag: "0.8.3"
+    pullPolicy: IfNotPresent
+  service:
+    type: NodePort
+  monitoring: false
+  resources:
+    limits:
+      cpu: 1
+      memory: 2Gi
+    requests:
+      cpu: 1
+      memory: 128Mi
